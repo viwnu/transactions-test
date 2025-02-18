@@ -17,14 +17,14 @@ This is a **NestJS-based API** for handling user balance transactions with Postg
 
 ## 🛠️ Installation
 
-### **1️⃣ Clone the repository**
+### **Clone the repository**
 
 ```bash
 git clone https://github.com/viwnu/transactions-test
 cd transactions-test
 ```
 
-## Running the app
+## 🚀 Running the app
 
 ### Option 1: Run Locally (Without Docker)
 
@@ -65,11 +65,11 @@ docker run --env-file .env.production -p 9000:9000 transactions-test
 docker-compose up --build
 ```
 
-## The API will be available at:
+## 🌍 The API will be available at:
 
 http://localhost:9000
 
-## Test
+## 🧪 Test
 
 ```bash
 
@@ -87,7 +87,7 @@ npm install -g artillery
 artillery run test/load-test.yml
 ```
 
-## Run database migrations & seed data
+## 📜 Run database migrations & seed data
 
 ```bash
 # To generate a new migration:
