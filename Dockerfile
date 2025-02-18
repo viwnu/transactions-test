@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile && yarn cache clean
 
 # Copy the rest of the application source code
 COPY . .
@@ -27,6 +27,7 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 COPY package.json ./
 COPY .env.production ./
+COPY tsconfig.json ./
 
 # Copy the src and libs folders for runtime dependencies
 COPY --from=builder /app/src ./src

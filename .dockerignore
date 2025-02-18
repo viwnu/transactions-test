@@ -1,6 +1,3 @@
 node_modules
 dist
 coverage
-.env.development
-.env.testing
-.env.production
