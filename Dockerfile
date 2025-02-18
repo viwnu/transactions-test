@@ -26,13 +26,25 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 COPY package.json ./
-COPY .env ./
+COPY .env.production ./
+
+# Copy the src and libs folders for runtime dependencies
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/libs ./libs
+
+# Copy .sequelizerc for Sequelize CLI to work
+COPY --from=builder /app/.sequelizerc ./
 
 # Install dotenv CLI to load .env variables
 RUN yarn global add dotenv-cli
+RUN yarn global add ts-node
+
+# Set environment variables
+ENV NODE_ENV=production
 
 # Expose application port (default to 9000, but can be overridden via .env)
 EXPOSE 9000
 
 # Run the application using the package.json "start:prod" script
-CMD ["yarn", "start:prod"]
+CMD ["sh", "-c", "export NODE_ENV=production && yarn start:prod"]
+
