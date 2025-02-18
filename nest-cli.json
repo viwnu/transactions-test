@@ -3,6 +3,27 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "projects": {
+    "api-doc": {
+      "type": "library",
+      "root": "libs/common/api-doc",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/api-doc/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/api-doc/tsconfig.lib.json"
+      }
+    },
+    "cashe": {
+      "type": "library",
+      "root": "libs/shared/cashe",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/cashe/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/cashe/tsconfig.lib.json"
+      }
+    }
   }
 }

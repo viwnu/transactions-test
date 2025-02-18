@@ -1,0 +1,19 @@
+config:
+  target: 'http://127.0.0.1:9000'
+  phases:
+    - duration: 10
+      arrivalRate: 100
+      name: Warm up the API
+    - duration: 10
+      arrivalRate: 100
+      rampTo: 1000
+      name: Ramp up to peak load
+    - duration: 10
+      arrivalRate: 1000
+      name: Sustained peak load
+scenarios:
+  - flow:
+      - post:
+          url: '/users'
+          json:
+            amount: -2

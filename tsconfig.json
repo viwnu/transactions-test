@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/api-doc": [
+        "libs/common/api-doc"
+      ],
+      "@app/api-doc/*": [
+        "libs/common/api-doc/*"
+      ],
+      "@app/cashe": [
+        "libs/shared/cashe/src"
+      ],
+      "@app/cashe/*": [
+        "libs/shared/cashe/src/*"
+      ]
+    }
   }
 }

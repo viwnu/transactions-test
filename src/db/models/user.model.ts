@@ -1,7 +1,7 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
-@Table
+@Table({ timestamps: false, createdAt: false, updatedAt: false })
 export class User extends Model {
-  @Column
+  @Column({ type: DataType.INTEGER, allowNull: false })
   balance: number;
 }
