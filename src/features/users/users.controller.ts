@@ -11,7 +11,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @ApiDoc({
-    title: 'Create User',
+    title: 'Change balance',
     response: { status: 201, description: 'Empty response' },
     exceptions: [ApiDocExceptions.badRequest],
   })
