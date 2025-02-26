@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transactions-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transactions-test
+  template:
+    metadata:
+      labels:
+        app: transactions-test
+    spec:
+      containers:
+        - name: transactions-test
+          image: viwnu/transactions-test:latest
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: my-secret

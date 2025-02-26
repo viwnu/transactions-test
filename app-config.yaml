@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_ENV: 'production'
+  NODE_ENV: 'production'
+  PORT: '9000'
+  SYNC_DB: 'true'
+  SQL_QUERY_LOGGING: 'false'
+  DOCUMENTATION: 'enable'
